@@ -1,0 +1,176 @@
+/* Global Styling */
+body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    margin: 0;
+    background-color: #1a1a2e; /* Dark, deep background */
+    font-family: 'Inter', sans-serif;
+    color: #e0e0e0;
+    overflow: hidden; /* Prevent body scroll */
+}
+
+/* Game Container and Canvas */
+#game-container {
+    border: 8px solid #00ff88;
+    border-radius: 12px;
+    box-shadow: 0 0 50px rgba(0, 255, 136, 0.4);
+    position: relative;
+    max-width: 900px;
+    width: 100%;
+    aspect-ratio: 16 / 9;
+    background-color: #000; /* Fallback background */
+}
+
+canvas {
+    display: block;
+    border-radius: 4px;
+    max-width: 100%;
+    height: auto;
+}
+
+/* Game Info Bar */
+.game-ui {
+    width: 100%;
+    max-width: 900px;
+    margin-bottom: 20px;
+    padding: 0 10px;
+    box-sizing: border-box;
+}
+
+.game-info h1 {
+    font-size: 1.75rem;
+    color: #00ff88;
+    margin-bottom: 5px;
+    text-align: center;
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5);
+}
+
+.controls {
+    text-align: center;
+    font-size: 0.9rem;
+    color: #a0a0a0;
+}
+
+/* --- Start Screen Overlay --- */
+.start-container {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.9);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    z-index: 500;
+    border-radius: 12px;
+    text-align: center;
+    padding: 20px;
+}
+
+.start-container h2 {
+    font-size: 4rem;
+    color: #ff4d4d;
+    margin-bottom: 20px;
+    text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.6);
+}
+
+.start-container p {
+    font-size: 1.2rem;
+    color: #ccc;
+    margin-bottom: 20px;
+    max-width: 90%;
+}
+
+#startButton,
+.start-button {
+    background: linear-gradient(45deg, #00ff88, #00cc66);
+    color: #1a1a2e;
+    border: none;
+    padding: 15px 40px;
+    font-size: 1.5rem;
+    font-weight: bold;
+    border-radius: 10px;
+    cursor: pointer;
+    box-shadow: 0 6px #00994d;
+    transition: all 0.2s ease;
+    margin-top: 20px;
+}
+
+#startButton:hover,
+.start-button:hover {
+    background: linear-gradient(45deg, #00cc66, #00994d);
+    transform: translateY(-2px);
+    box-shadow: 0 8px #006633;
+}
+
+#startButton:active,
+.start-button:active {
+    transform: translateY(3px);
+    box-shadow: 0 3px #006633;
+}
+
+.start-tip {
+    color: #b3ffcc;
+    font-size: 1.1rem;
+    margin-top: 15px;
+}
+
+/* --- Mobile Controls (Touch Buttons) --- */
+#mobileControls,
+.mobile-controls {
+    display: none; /* Hidden by default */
+    width: 100%;
+    max-width: 900px;
+    padding: 10px 0;
+    box-sizing: border-box;
+}
+
+.control-pad {
+    display: flex;
+    gap: 30px; /* Spacing between UP and DOWN buttons */
+}
+
+.control-btn {
+    background-color: #444;
+    color: #fff;
+    padding: 20px 30px;
+    border-radius: 50%;
+    font-size: 1.8rem;
+    font-weight: bold;
+    user-select: none;
+    cursor: pointer;
+    box-shadow: 0 4px #222;
+    transition: background-color 0.1s, transform 0.1s;
+    width: 80px;
+    height: 80px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.control-btn:active {
+    box-shadow: 0 1px #222;
+    transform: translateY(3px);
+    background-color: #666;
+}
+
+/* Only Up and Down buttons are active */
+.btn-left,
+.btn-right {
+    display: none !important;
+}
+
+/* Show mobile controls on smaller screens */
+@media (max-width: 768px) {
+    #mobileControls,
+    .mobile-controls {
+        display: flex;
+        justify-content: center;
+        margin-top: 15px;
+    }
+}
