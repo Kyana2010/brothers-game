@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>Drone Adventure Game</title>
+
+    <!-- Tailwind CSS for utility classes -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- Phaser game engine -->
+    <script src="https://cdn.jsdelivr.net/npm/phaser@3.55.2/dist/phaser.min.js"></script>
+
+    <!-- External Stylesheet -->
+    <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+    <header class="text-white text-center mb-6">
+        <h1 class="text-4xl font-extrabold text-yellow-400 mb-2">🚁 Drone Adventure</h1>
+        <p class="text-lg text-gray-300">Ultimate High-Speed Challenge</p>
+        <p class="text-sm mt-2 text-gray-400">
+            Desktop: <strong>Arrow Keys ↑ ↓</strong> / <strong>P</strong> (Pause) | Mobile: <strong>Touch Controls</strong>
+        </p>
+    </header>
+
+    <div id="game-container">
+        <!-- Phaser canvas will be injected here by game.js -->
+
+        <!-- Start Screen Overlay -->
+        <div id="startContainer" class="start-container">
+            <h2 class="text-6xl font-black text-red-600 mb-6 drop-shadow-lg">READY?</h2>
+            <p class="text-xl text-gray-800 mb-8">Avoid obstacles, collect stars, and race to Level 20!</p>
+            <button id="startButton" class="start-button">Start Adventure</button>
+            <p class="text-md text-gray-800 mt-4">Use the UP and DOWN arrow keys to fly.</p>
+        </div>
+    </div>
+
+    <!-- Mobile Controls (styled by style.css, toggled by game.js) -->
+    <div id="mobileControls" class="mobile-controls show">
+        <div class="control-pad">
+            <div class="control-btn" data-key="up">↑</div>
+            <div class="control-btn" data-key="down">↓</div>
+        </div>
+    </div>
+
+    <!-- External JavaScript Game Logic -->
+    <script src="game.js"></script>
+</body>
+</html>
